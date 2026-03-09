@@ -94,7 +94,7 @@ function getTeamColor(name: string) {
           </tr>
         </thead>
         <tbody>
-          <tr v-for="d in standings" :key="d.position">
+          <tr v-for="d in standings" :key="d.position" :class="{ 'norris-row': d.lastName === 'Norris' }">
             <td class="col-pos">{{ d.position }}</td>
             <td class="col-driver">
               <span class="team-bar" :style="{ background: getTeamColor(d.constructor) }" />
@@ -276,5 +276,25 @@ function getTeamColor(name: string) {
 
 tr:hover {
   background: rgba(255, 255, 255, 0.03);
+}
+
+.norris-row {
+  background: rgba(255, 128, 0, 0.1);
+}
+
+.norris-row td {
+  color: #ffb366;
+}
+
+.norris-row .col-pts {
+  color: #ff8000 !important;
+}
+
+.norris-row .driver-last {
+  color: #ffb366;
+}
+
+.norris-row .driver-first {
+  color: #cc6600;
 }
 </style>

@@ -126,23 +126,7 @@ onMounted(async () => {
     <div class="mcr-header">
       <div class="mcr-header-left">
         <div class="mcr-bee">
-          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="bee-svg">
-            <!-- Body -->
-            <ellipse cx="16" cy="18" rx="7" ry="9" fill="#f59e0b"/>
-            <!-- Stripes -->
-            <rect x="9" y="16" width="14" height="2.5" rx="1" fill="#1a1a1a"/>
-            <rect x="9" y="20" width="14" height="2.5" rx="1" fill="#1a1a1a"/>
-            <!-- Head -->
-            <circle cx="16" cy="9" r="4" fill="#f59e0b"/>
-            <!-- Antennae -->
-            <line x1="14" y1="6" x2="11" y2="2" stroke="#1a1a1a" stroke-width="1.2" stroke-linecap="round"/>
-            <line x1="18" y1="6" x2="21" y2="2" stroke="#1a1a1a" stroke-width="1.2" stroke-linecap="round"/>
-            <circle cx="11" cy="2" r="1" fill="#1a1a1a"/>
-            <circle cx="21" cy="2" r="1" fill="#1a1a1a"/>
-            <!-- Wings -->
-            <ellipse cx="8" cy="14" rx="5" ry="3" fill="rgba(255,255,255,0.35)" transform="rotate(-20 8 14)"/>
-            <ellipse cx="24" cy="14" rx="5" ry="3" fill="rgba(255,255,255,0.35)" transform="rotate(20 24 14)"/>
-          </svg>
+          <img src="@/assets/images/manchester-bee.png" alt="Manchester Bee" class="bee-img" />
         </div>
         <div class="mcr-header-text">
           <span class="mcr-header-title">Manchester</span>
@@ -226,13 +210,13 @@ onMounted(async () => {
 
 /* Header */
 .mcr-header {
-  background: linear-gradient(135deg, #1a1200 0%, #92400e 50%, #d97706 100%);
+  background: #ffdd42;
   padding: 12px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-shrink: 0;
-  border-bottom: 2px solid #78350f;
+  border-bottom: 2px solid #e6c700;
 }
 
 .mcr-header-left {
@@ -242,15 +226,16 @@ onMounted(async () => {
 }
 
 .mcr-bee {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
 }
 
-.bee-svg {
+.bee-img {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5));
+  object-fit: contain;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
 }
 
 .mcr-header-text {
@@ -261,13 +246,13 @@ onMounted(async () => {
 .mcr-header-title {
   font-size: 16px;
   font-weight: 700;
-  color: #fff;
+  color: #1a1200;
   line-height: 1.2;
 }
 
 .mcr-header-sub {
   font-size: 10px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(0,0,0,0.55);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -275,8 +260,8 @@ onMounted(async () => {
 .mcr-temp-badge {
   font-size: 13px;
   font-weight: 700;
-  color: rgba(255,255,255,0.9);
-  background: rgba(0,0,0,0.25);
+  color: #1a1200;
+  background: rgba(0,0,0,0.15);
   padding: 3px 10px;
   border-radius: 4px;
 }
