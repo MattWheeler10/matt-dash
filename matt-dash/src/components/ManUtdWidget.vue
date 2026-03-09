@@ -2,7 +2,6 @@
 import { ref, onMounted } from 'vue'
 
 const TEAM_ID = 66
-const API_KEY = import.meta.env.VITE_FOOTBALL_API_KEY
 
 interface StandingEntry {
   position: number
@@ -40,9 +39,7 @@ const loading = ref(true)
 const error = ref('')
 
 async function fetchStandings() {
-  const res = await fetch('/api/football/v4/competitions/PL/standings', {
-    headers: { 'X-Auth-Token': API_KEY },
-  })
+  const res = await fetch('/api/football/v4/competitions/PL/standings')
   if (!res.ok) throw new Error('Standings fetch failed')
   const data = await res.json()
   const table = data.standings[0].table
@@ -66,7 +63,6 @@ async function fetchStandings() {
 async function fetchNextMatch() {
   const res = await fetch(
     `/api/football/v4/teams/${TEAM_ID}/matches?status=SCHEDULED&limit=2`,
-    { headers: { 'X-Auth-Token': API_KEY } },
   )
   if (!res.ok) throw new Error('Matches fetch failed')
   const data = await res.json()
@@ -96,11 +92,6 @@ async function fetchNews() {
 }
 
 onMounted(async () => {
-  if (!API_KEY) {
-    error.value = 'Add VITE_FOOTBALL_API_KEY to .env.local'
-    loading.value = false
-    return
-  }
   try {
     await Promise.all([fetchStandings(), fetchNextMatch(), fetchNews()])
   } catch (e: any) {

@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-const API_KEY = import.meta.env.VITE_FOOTBALL_API_KEY
-
 interface TeamRow {
   position: number
   name: string
@@ -22,9 +20,7 @@ const error = ref('')
 
 onMounted(async () => {
   try {
-    const res = await fetch('/api/football/v4/competitions/PL/standings', {
-      headers: { 'X-Auth-Token': API_KEY },
-    })
+    const res = await fetch('/api/football/v4/competitions/PL/standings')
     if (!res.ok) throw new Error('Failed to fetch standings')
     const data = await res.json()
     table.value = data.standings[0].table.map((t: any) => ({
