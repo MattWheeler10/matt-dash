@@ -190,7 +190,7 @@ function timeAgo(dateStr: string) {
           <span class="draw">D{{ standing?.draw }}</span>
           <span class="loss">L{{ standing?.lost }}</span>
         </div>
-        <div class="utd-gd">GD {{ standing?.goalDifference > 0 ? '+' : '' }}{{ standing?.goalDifference }}</div>
+        <div class="utd-gd">GD {{ (standing?.goalDifference ?? 0) > 0 ? '+' : '' }}{{ standing?.goalDifference }}</div>
         <div v-if="standing?.form" class="utd-form">
           <div class="utd-section-label" style="margin-bottom: 6px">Form</div>
           <div class="form-dots">
