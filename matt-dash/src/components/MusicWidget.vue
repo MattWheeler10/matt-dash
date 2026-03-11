@@ -67,7 +67,7 @@ onMounted(async () => {
         </div>
       </div>
       <div class="music-header-right">
-        <span class="chart-badge">🇬🇧 iTunes Charts</span>
+        <span class="chart-badge">iTunes Charts</span>
       </div>
     </div>
 
