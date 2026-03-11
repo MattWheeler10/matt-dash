@@ -51,7 +51,7 @@ function isManUtd(name: string) {
   <div class="pl-widget">
     <div class="pl-header">
       <img src="@/assets/images/pl logo.png" alt="PL" class="pl-logo" />
-      <span class="pl-title">Premier League</span>
+      <span class="pl-title">Premier League Table</span>
     </div>
 
     <div v-if="loading" class="pl-state">
