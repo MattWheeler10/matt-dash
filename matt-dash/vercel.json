@@ -2,8 +2,5 @@
   "framework": "vite",
   "buildCommand": "pnpm run build-only",
   "outputDirectory": "dist",
-  "installCommand": "pnpm install",
-  "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
-  ]
+  "installCommand": "pnpm install"
 }
