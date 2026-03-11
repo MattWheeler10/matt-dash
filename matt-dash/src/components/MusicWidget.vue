@@ -9,7 +9,6 @@ interface ChartTrack {
   url: string
 }
 
-
 const charts = ref<ChartTrack[]>([])
 const hiphopCharts = ref<ChartTrack[]>([])
 const chartsError = ref('')
